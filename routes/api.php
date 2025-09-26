@@ -17,3 +17,12 @@ Route::get('/user', function (Request $request) {
 Route::middleware('auth:sanctum')->group( function () {
     Route::apiResource('products', ProductController::class);
 });
+
+Route::apiResource('suppliers', SupplierController::class)->missing(
+    function (Request $request) {
+        $response = [
+            'success' => false,
+            'message' => 'Supplier not found',
+        ];
+        return response()->json($response, 404);
+    });
