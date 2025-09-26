@@ -3,7 +3,7 @@
 namespace App\Http\Controllers\API;
 
 use Illuminate\Http\Request;
-use App\Http\Controllers as Controller;
+use App\Http\Controllers\Controller as Controller;
 
 class BaseController extends Controller
 
@@ -25,7 +25,7 @@ class BaseController extends Controller
     }
 
     /**
-     * success response method.
+     * return error response.
      *
      * @return \Illuminate\Http\Response 
      */
